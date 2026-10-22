@@ -1,0 +1,56 @@
+name: LaTeX Math
+slug: latex-math
+type: plugin
+version: 0.9.0
+description: 'Draws LaTeX math in a page with KaTeX or MathJax, written as $…$, $$ … $$, \( … \), \[ … \] or in a ```math block.'
+icon: superscript
+author:
+  name: HibbittsDesign.org
+  email: hello@hibbittsdesign.org
+  url: https://hibbittsdesign.org
+homepage: https://github.com/paulhibbitts/latex-math
+demo: https://demo.hibbittsdesign.org/grav-plugin-latex-math/
+docs: https://github.com/paulhibbitts/latex-math/blob/main/README.md
+keywords: math, latex, katex, mathjax, equations
+bugs: https://github.com/paulhibbitts/latex-math/issues
+license: MIT
+compatibility:
+  grav: ['1.7', '2.0']
+
+dependencies:
+  - { name: grav, version: '>=1.7.0' }
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: 'Plugin Status'
+      highlight: 1
+      default: 1
+      options:
+        1: 'Enabled'
+        0: 'Disabled'
+      validate:
+        type: bool
+
+    engine:
+      type: select
+      label: 'Math Engine'
+      help: 'KaTeX is faster; MathJax covers more LaTeX. A page can also choose its own.'
+      default: katex
+      options:
+        katex: 'KaTeX'
+        mathjax: 'MathJax'
+
+    inline_dollars:
+      type: toggle
+      label: 'Inline $…$ Math'
+      help: 'Turn off if $ is used for prices. A page can also turn it off.'
+      highlight: 1
+      default: 1
+      options:
+        1: 'Enabled'
+        0: 'Disabled'
+      validate:
+        type: bool

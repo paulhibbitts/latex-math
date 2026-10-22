@@ -1,0 +1,3 @@
+enabled: true
+engine: katex              # katex or mathjax
+inline_dollars: true       # $…$ for inline math (turn off for pages that use $ for prices)
