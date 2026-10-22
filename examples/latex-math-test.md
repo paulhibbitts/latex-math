@@ -67,6 +67,16 @@ $$
 |------|---------|
 | Expect: math in a table | $E = mc^2$ |
 
+## Extra Packages
+
+Expect: each draws with either engine – a crossed-out x, a red y, a boxed z, water as a chemical formula, and an equation numbered (1).
+
+$\cancel{x}$, $\color{red}{y}$, $\boxed{z}$ and $\ce{H2O}$
+
+$$
+E = mc^2 \tag{1}
+$$
+
 ## A Formula with a Mistake
 
 Expect: the mistake shows as an error, and the formula after it still draws: $\frac{1}{$ then $a^2$.

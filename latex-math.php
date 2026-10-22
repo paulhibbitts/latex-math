@@ -283,6 +283,14 @@ HTML;
             $katex_js = Utils::url('plugin://latex-math/js/katex/katex.min.js') . '?v=' . self::KATEX_VERSION;
             $scripts .= '<script src="' . $katex_js . '"></script>' . "\n";
 
+            // KaTeX's mhchem add-on for chemistry (\ce and \pu), only on pages that use it (MathJax loads its own copy
+            // from js/mathjax/input/tex/extensions when needed)
+            $output = $this->grav->output;
+            if (strpos($output, '\\ce{') !== false || strpos($output, '\\pu{') !== false) {
+                $mhchem_js = Utils::url('plugin://latex-math/js/katex/contrib/mhchem.min.js') . '?v=' . self::KATEX_VERSION;
+                $scripts .= '<script src="' . $mhchem_js . '"></script>' . "\n";
+            }
+
             // KaTeX's copy-tex add-on: copying drawn math copies its LaTeX (MathJax has this in its right-click menu)
             $copy_tex_js = Utils::url('plugin://latex-math/js/katex/contrib/copy-tex.min.js') . '?v=' . self::KATEX_VERSION;
             $scripts .= '<script src="' . $copy_tex_js . '"></script>' . "\n";

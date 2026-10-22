@@ -35,7 +35,7 @@ $$
 \int_0^1 x^2 \, dx = \frac{1}{3}
 $$
 
-A block can also go in a code block marked `math`, as on GitHub, and MathJax's `\( … \)` works too, as does a block between `\[` and `\]`, each on its own line (only then, as Markdown also uses `\[` for a plain bracket). A formula with a mistake shows an error in red, and the rest still draw. Copying a formula copies its LaTeX, ready to paste into another page.
+A block can also go in a code block marked `math`, as on GitHub, and MathJax's `\( … \)` works too, as does a block between `\[` and `\]`, each on its own line (only then, as Markdown also uses `\[` for a plain bracket). A formula with a mistake shows an error in red, and the rest still draw. Copying a formula copies its LaTeX, ready to paste into another page. Chemistry works too, such as `\ce{H2O}`.
 
 > [!TIP]
 > Prices such as $5 and $10 stay as text, and `\$` shows a dollar sign. For a page with many prices, add `latex-math: { inline_dollars: false }` to its front matter.
@@ -49,6 +49,6 @@ The engine is only added to pages with math.
 
 ## Credits
 
-Includes [KaTeX](https://github.com/KaTeX/KaTeX) 0.19.0 (`katex.min.js`, `katex.min.css` and its `.woff2` fonts, and `contrib/copy-tex.min.js`, MIT licence), and [MathJax](https://github.com/mathjax/MathJax) 4.1.3 (`tex-chtml.js` and `a11y/assistive-mml.js`, Apache 2.0 licence) with its [New Computer Modern](https://github.com/mathjax/MathJax-fonts) font files (`chtml.js` and the `chtml` folder from `@mathjax/mathjax-newcm-font`, Apache 2.0 licence). The KaTeX and MathJax licences are in their folders in `js/`.
+Includes [KaTeX](https://github.com/KaTeX/KaTeX) 0.19.0 (`katex.min.js`, `katex.min.css` and its `.woff2` fonts, and `contrib/copy-tex.min.js`, MIT licence, plus `contrib/mhchem.min.js` with Martin Hensel's mhchem, Apache 2.0 licence), and [MathJax](https://github.com/mathjax/MathJax) 4.1.3 (`tex-chtml.js`, `a11y/assistive-mml.js` and the `input/tex/extensions` folder, Apache 2.0 licence) with its [New Computer Modern](https://github.com/mathjax/MathJax-fonts) font files (`chtml.js` and the `chtml` folder from `@mathjax/mathjax-newcm-font`, Apache 2.0 licence). The KaTeX and MathJax licences are in their folders in `js/`.
 
 `examples/latex-math-demo.md` is a demo page with a testing checklist, `examples/latex-math-test.md` covers edge cases, and `examples/latex-math-page-setting-test.md` checks a page's own settings – together, they check math after an update.
