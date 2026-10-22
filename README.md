@@ -54,3 +54,7 @@ The engine is only added to pages with math.
 Includes [KaTeX](https://github.com/KaTeX/KaTeX) 0.19.0 by Khan Academy and contributors (`katex.min.js`, `katex.min.css` and its `.woff2` fonts, and `contrib/copy-tex.min.js`, MIT licence, plus `contrib/mhchem.min.js` with Martin Hensel's mhchem, Apache 2.0 licence), and [MathJax](https://github.com/mathjax/MathJax) 4.1.3 by the MathJax Consortium (`tex-chtml.js`, `a11y/assistive-mml.js` and the `input/tex/extensions` folder, Apache 2.0 licence) with its [New Computer Modern](https://www.npmjs.com/package/@mathjax/mathjax-newcm-font) font files (`chtml.js` and the `chtml` folder from `@mathjax/mathjax-newcm-font`, Apache 2.0 licence). The KaTeX and MathJax licences are in their folders in `js/`.
 
 `examples/latex-math-demo.md` is the page behind the [online demo](https://demo.hibbittsdesign.org/grav-plugin-latex-math/), with a testing checklist, `examples/latex-math-test.md` covers edge cases, and `examples/latex-math-page-setting-test.md` checks a page's own settings – together, they check math after an update.
+
+## License
+
+MIT – see [LICENSE](LICENSE). By [Paul Hibbitts](https://hibbittsdesign.org).
