@@ -64,6 +64,8 @@ class LatexMathPlugin extends Plugin
 
         // A block: $$ on its own line, the math, then $$ (or all of it on one line). Or MathJax's \[ and \], each on
         // its own line – only then, as Markdown also writes [ as \[ (such as \[1\] for a reference).
+        // Markdown calls blockMathBlock to start a block, then blockMathBlockContinue with each next line (null ends
+        // the block), then blockMathBlockComplete. The two trues turn on those last two steps.
         $markdown->addBlockType('$', 'MathBlock', true, true);
         $markdown->addBlockType('\\', 'MathBlock', true, true);
 
@@ -145,7 +147,8 @@ class LatexMathPlugin extends Plugin
         };
 
         // Within a sentence: \$ shows a plain dollar sign, and MathJax's \( … \) is math. Index 0 puts this before
-        // Markdown's own \ handling, which would turn \( into (.
+        // Markdown's own \ handling, which would turn \( into (. Each result gives the characters used ('extent') and
+        // what to show. In the patterns, \\\\ matches a single \ in the page.
         $markdown->addInlineType('\\', 'MathBackslash', 0);
         $markdown->inlineMathBackslash = function ($excerpt) {
             if (isset($excerpt['text'][1]) && $excerpt['text'][1] === '$') {
@@ -164,7 +167,7 @@ class LatexMathPlugin extends Plugin
         }
 
         // Within a sentence: $$…$$ (drawn as a block), or $…$ with no space just inside either $ and no digit
-        // straight after the closing $ (so prices such as $5 and $10 stay as text)
+        // straight after the closing $ (so prices such as $5 and $10 stay as text, while $x^2$ is math)
         $markdown->addInlineType('$', 'MathInline');
         $markdown->inlineMathInline = function ($excerpt) {
             if (preg_match('/^\$\$(.+?)\$\$/', $excerpt['text'], $match)) {
